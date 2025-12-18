@@ -1,0 +1,84 @@
+<nav style="margin:auto" class="navbar navbar-expand-lg bg-dark">
+
+    <a style="color: white;" class="navbar-brand" href="#">HOTEL Management System</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-lg-0">
+        <li class="nav-item">
+            <a style="color: white;" class="nav-link active" aria-current="page" href="javascript:void(0);"
+            routerLink="/create-menu">AddMenu</a>
+        </li>
+        <li class="nav-item">
+            <a style="color: white;" class="nav-link active" aria-current="page" href="javascript:void(0);"
+            routerLink="/customer">CustomerList</a>
+        </li>
+        <li class="nav-item">
+            <a style="color: white;" class="nav-link active" aria-current="page" href="javascript:void(0);"
+            routerLink="/orderList">OrderList</a>
+        </li>
+        <li class="nav-item">
+            <a style="color: white;" class="nav-link active" aria-current="page" href="javascript:void(0);"
+            routerLink="/">LogOut</a>
+        </li>
+        
+        
+    </ul>
+</div>
+</nav>
+
+<button class="btn btn-success" type="button" routerLink="/create-menu">Add Menu</button>
+
+<table class="table table-striped">
+
+    <thead>
+
+        <tr>
+            <th>Item_ID</th>
+            <th>Item_Name</th>
+            <th>Item_Category</th>
+            <th>Item_Price</th>
+            <th>Item_Avail</th>
+            <th>Item_Descr</th>
+            <th>Update</th>
+            <th>Delete</th>
+            <th>View</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor="let menu of menu">
+
+            <td>{{menu.item_id}}</td>
+            <td>{{menu.item_name}}</td>
+            <td>{{menu.item_category}}</td>
+            <td>{{menu.item_price}}</td>
+            <td>{{menu.item_availability}}</td>
+            <td>{{menu.item_description}}</td>
+
+            <td>
+                <button (click)="update(menu.item_id!)" class="btn btn-success">Update</button>
+            </td>
+
+            <td> 
+                <button (click)="delete(menu.item_id!)" class="btn btn-danger">Delete</button>
+            </td>
+
+            <td>
+                <button (click)="view(menu.item_id!)" class="btn btn-info">View</button>
+            </td>
+
+
+        </tr>
+
+    </tbody>
+
+</table>
+
+

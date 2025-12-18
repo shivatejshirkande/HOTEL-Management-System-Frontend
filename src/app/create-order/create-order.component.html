@@ -1,0 +1,115 @@
+<!-- <select id="paymentstatus" class="form-control" name="paymentstatus"
+        [(ngModel)]="order.order_paymentStatus" required>
+    <option value="" disabled selected>Select Payment Status</option>
+    <option *ngFor="let status of paymentStatusList" [value]="status">{{ status }}</option>
+</select>
+
+<select id="ordertype" class="form-control" name="ordertype"
+        [(ngModel)]="order.order_type" required>
+    <option value="" disabled selected>Select Order Type</option>
+    <option *ngFor="let type of orderTypeList" [value]="type">{{ type }}</option>
+</select> -->
+
+
+<div class="container">
+
+    <h2 class="text-center">Add new Order</h2>
+
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+
+        <div class="form-group">
+            <label>Order_Date:</label>
+            <input type="text" id="orderdate" class="form-control" name="orderdate" 
+                   placeholder="Enter the Order Date"
+                   [(ngModel)]="order.order_date" required>
+        </div>
+
+        <div class="form-group">
+            <label>Order_TotalAmt:</label>
+            <input type="text" id="ordertotal" class="form-control" name="ordertotal" 
+                   placeholder="Enter the Order Total Amount"
+                   [(ngModel)]="order.order_totalAmount" required>
+        </div>
+
+        <!-- 🔽 PAYMENT STATUS DROPDOWN -->
+        <div class="form-group">
+            <label>Order_PaymentStatus:</label>
+            <select id="paymentstatus" class="form-control" name="paymentstatus"
+                    [(ngModel)]="order.order_paymentStatus" required>
+                <option value="" disabled selected>Select Payment Status</option>
+
+                <!-- <option *ngFor="let status of paymentStatusList" [value]="status">
+                    {{ status }}
+                </option> -->
+                
+                <option value="paid">Paid</option>
+                <option value="unpaid">Unpaid</option>
+                <option value="pending">Pending</option>
+            </select>
+        </div>
+
+        <!-- 🔽 ORDER TYPE DROPDOWN -->
+        <div class="form-group">
+            <label>Order_Type:</label>
+            <select id="ordertype" class="form-control" name="ordertype"
+                    [(ngModel)]="order.order_type" required>
+                <option value="" disabled selected>Select Order Type</option>
+
+                <!-- <option *ngFor="let type of orderTypeList" [value]="type">
+                    {{ type }} </option> -->
+
+                <option value="room service">Room Service</option>
+                <option value="dine-in">Dine-In</option>
+                <option value="online delivery">Online Delivery</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+
+</div>
+
+
+<!-- <div class="container">
+
+    <h2 class="text-center">Add new Order</h2>
+
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+
+        <div class="form-group">
+
+            <label>Order_Date:</label>
+            <input type="text" id="orderdate" class="form-control" name="orderdate" placeholder="Enter the Order Date" [(ngModel)]="order.order_date" required #itemname="ngModel">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Order_TotalAmt:</label>
+            <input type="text" id="ordertotal" class="form-control" name="ordertotal" placeholder="Enter the Order Total Amount" [(ngModel)]="order.order_totalAmount" required #itemcategory="ngModel">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Order_PaymentStatus:</label>
+            <input type="text" id="paymentstatus" class="form-control" name="paymentstatus" placeholder="Enter the Order Payment Status" [(ngModel)]="order.order_paymentStatus" required #itemprice="ngModel">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Order_Type:</label>
+            <input type="text" id="ordertype" class="form-control" name="ordertype" placeholder="Enter the Order Type" [(ngModel)]="order.order_type" required #itemavail="ngModel">
+
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+
+
+    </form>
+
+</div>
+
+
+ -->

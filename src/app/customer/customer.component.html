@@ -1,0 +1,83 @@
+<nav style="margin:auto" class="navbar navbar-expand-lg bg-dark">
+
+    <a style="color: white;" class="navbar-brand" href="#">HOTEL Management System</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-lg-0">
+        <li class="nav-item">
+            <a style="color: white;" class="nav-link active" aria-current="page" href="javascript:void(0);"
+            routerLink="/create-customer">AddCustomer</a>
+        </li>
+        <li class="nav-item">
+            <a style="color: white;" class="nav-link active" aria-current="page" href="javascript:void(0);"
+            routerLink="/menuList">MenuList</a>
+        </li>
+        <li class="nav-item">
+            <a style="color: white;" class="nav-link active" aria-current="page" href="javascript:void(0);"
+            routerLink="/orderList">OrderList</a>
+        </li>
+        <li class="nav-item">
+            <a style="color: white;" class="nav-link active" aria-current="page" href="javascript:void(0);"
+            routerLink="/">LogOut</a>
+        </li>
+        
+        
+    </ul>
+</div>
+</nav>
+
+<button class="btn btn-success" type="button" routerLink="/create-customer">Add Customer</button>
+
+<table class="table table-striped">
+
+    <thead>
+
+        <tr>
+            <th>ID</th>
+            <th>FullName</th>
+            <th>PhoneNumber</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>CustomerType</th>
+            <th>Update</th>
+            <th>Delete</th>
+            <th>View</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor="let customer of customer">
+
+            <td>{{customer.cId}}</td>
+            <td>{{customer.cFullName}}</td>
+            <td>{{customer.cPhoneNumber}}</td>
+            <td>{{customer.cEmail}}</td>
+            <td>{{customer.cAddress}}</td>
+            <td>{{customer.cCustomerType}}</td>
+
+            <td>
+                <button (click)="update(customer.cId!)" class="btn btn-success">Update</button>
+            </td>
+            <td> 
+                <button (click)="delete(customer.cId!)" class="btn btn-danger">Delete</button>
+            </td>
+
+            <td>
+                <button (click)="view(customer.cId!)" class="btn btn-info">View</button>
+            </td>
+
+
+        </tr>
+
+    </tbody>
+
+</table>
+
+

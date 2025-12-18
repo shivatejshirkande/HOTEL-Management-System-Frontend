@@ -1,0 +1,51 @@
+<div class="container">
+
+    <h2 class="text-center">Add new Menu</h2>
+
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+
+        <div class="form-group">
+
+            <label>Item_Name:</label>
+            <input type="text" id="itemname" class="form-control" name="itemname" placeholder="Enter the Item Name" [(ngModel)]="menu.item_name" required #itemname="ngModel">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Item_Category:</label>
+            <input type="text" id="itemcategory" class="form-control" name="itemcategory" placeholder="Enter the Item Category" [(ngModel)]="menu.item_category" required #itemcategory="ngModel">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Item_Price:</label>
+            <input type="text" id="itemprice" class="form-control" name="itemprice" placeholder="Enter the Item Price" [(ngModel)]="menu.item_price" required #itemprice="ngModel">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Item_Avail:</label>
+            <input type="text" id="itemavail" class="form-control" name="itemavail" placeholder="Enter the Item Availability" [(ngModel)]="menu.item_availability" required #itemavail="ngModel">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Item_Descr:</label>
+            <input type="text" id="itemdescr" class="form-control" name="itemdescr" placeholder="Enter the Item Description" [(ngModel)]="menu.item_description" required #itemdescr="ngModel">
+
+        </div>
+    
+
+        <button type="submit" class="btn btn-success">Submit</button>
+
+
+    </form>
+
+</div>
+
+
+
